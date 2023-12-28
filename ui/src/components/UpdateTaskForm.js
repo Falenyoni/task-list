@@ -11,7 +11,7 @@ const UpdateTaskForm = ({
   fetchTasks,
 }) => {
   const { id, completed } = task;
-  const [taskName, setTaskName] = useState("");
+  const [taskname, setTaskName] = useState("");
 
   const handleUpdateTaskName = async () => {
     try {
@@ -43,7 +43,7 @@ const UpdateTaskForm = ({
         />
         <Button
           variant="contained"
-          onClick={async() => {
+          onClick={async () => {
             await handleUpdateTaskName();
 
             setIsDialogOpen(false);
