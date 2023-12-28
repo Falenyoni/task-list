@@ -21,7 +21,9 @@ const UpdateTaskForm = ({
         completed,
       });
       await fetchTasks();
+
       setTaskName("");
+
     } catch (err) {
       console.log(err);
     }
@@ -30,10 +32,7 @@ const UpdateTaskForm = ({
     <Dialog open={isDialogOpen}>
       <DialogTitle>Edit Task</DialogTitle>
       <div
-        className="dialog"
-        label="Task"
-        variant="outlined"
-        onChange={(e) => setTaskName(e.target.value)}
+        className="dialog"       
       >
         <TextField
           size="small"

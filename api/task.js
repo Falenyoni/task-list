@@ -49,15 +49,15 @@ export const updateTasks = async ({ id, name, completed }) => {
     ExpressionAttributeNames: {
       "#name": "name",
     },
-    UpdateExpression: "set #name= :n, completed =:c",
+    UpdateExpression: "set #name = :n, completed = :c",
     ExpressionAttributeValues: {
       ":n": name,
       ":c": completed,
     },
     ReturnValues: "ALL_NEW",
   });
-  const response = await docClient.send(command);
 
+  const response = await docClient.send(command);
   return response;
 };
 

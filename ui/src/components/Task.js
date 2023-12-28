@@ -9,7 +9,6 @@ import axios from "axios";
 import { API_URL } from "../utils";
 
 const Task = ({ task, fetchTasks }) => {
-  console.log(task);
   const { id, name, completed } = task;
   const [isComplete, setIsComplete] = useState(completed);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -29,7 +28,7 @@ const Task = ({ task, fetchTasks }) => {
 
   const handleDeleteTask = async () => {
     try {
-      await axios.put(`{API_URL}/${task.id}`);
+      await axios.delete(`${API_URL}/${task.id}`);
 
       await fetchTasks();
     } catch (err) {
